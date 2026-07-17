@@ -1,5 +1,5 @@
 import Logo from "./Logo";
-import { FacebookIcon, InstagramIcon, LinkedinIcon, XSocialIcon } from "./Icons";
+import { FacebookIcon, SocialInstagramIcon, SocialXIcon } from "./Icons";
 
 const columns = [
   { title: "Product", links: ["Features", "Pricing", "Templates", "Integrations"] },
@@ -25,11 +25,11 @@ export default function Footer() {
             </div>
           ))}
           <div>
-            <h3 className="text-base font-extrabold">Social Links</h3>
-            <div className="mt-5 flex gap-3">
-              {[<FacebookIcon key="f" />, <XSocialIcon key="x" />, <InstagramIcon key="i" />, <LinkedinIcon key="l" />].map((icon, index) => (
-                <a key={index} href="#top" aria-label="Social profile" className="grid h-9 w-9 place-items-center rounded-lg bg-white/10 text-white/80 transition hover:bg-brand hover:text-white">{icon}</a>
-              ))}
+            <h3 className="text-base font-medium">Social Links</h3>
+            <div className="mt-4 flex gap-3">
+              <a href="#top" aria-label="Instagram" className="grid h-9 w-9 place-items-center rounded-full bg-white text-ink transition hover:-translate-y-0.5 hover:bg-brand hover:text-white"><SocialInstagramIcon /></a>
+              <a href="#top" aria-label="Facebook" className="grid h-9 w-9 place-items-center rounded-full bg-white text-ink transition hover:-translate-y-0.5 hover:bg-brand hover:text-white"><FacebookIcon /></a>
+              <a href="#top" aria-label="X" className="grid h-9 w-9 place-items-center rounded-full bg-white text-ink transition hover:-translate-y-0.5 hover:bg-brand hover:text-white"><SocialXIcon /></a>
             </div>
           </div>
         </div>

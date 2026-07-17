@@ -13,7 +13,7 @@ export default {
         surface: "#f7f8fc"
       },
       fontFamily: {
-        sans: ["Manrope", "Inter", "ui-sans-serif", "system-ui", "sans-serif"]
+        sans: ["Manrope", "Inter", "ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"]
       },
       boxShadow: {
         soft: "0 18px 50px rgba(16, 23, 39, 0.08)",

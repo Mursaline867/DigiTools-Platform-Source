@@ -15,15 +15,15 @@ export default function Pricing() {
         <SectionHeading title="Simple, Transparent Pricing" description="Choose the plan that fits your needs. Upgrade or downgrade anytime." />
         <div className="mt-14 grid items-stretch gap-6 lg:grid-cols-3">
           {plans.map((plan) => (
-            <article key={plan.name} className={`relative flex flex-col rounded-2xl border bg-white p-6 shadow-card sm:p-8 ${plan.popular ? "border-brand ring-2 ring-brand/10 lg:-translate-y-3" : "border-[#e8eaf2]"}`}>
+            <article key={plan.name} className="group relative flex flex-col rounded-2xl border border-[#e3e5eb] bg-[#f8f9fb] p-6 shadow-card transition-all duration-300 ease-out hover:-translate-y-2 hover:border-transparent hover:bg-brand-gradient hover:text-white hover:shadow-purple active:-translate-y-2 active:border-transparent active:bg-brand-gradient active:text-white active:shadow-purple sm:p-8">
               {plan.popular && <span className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-100 px-4 py-1.5 text-xs font-bold text-orange-700">Most Popular</span>}
-              <h3 className="text-2xl font-extrabold text-ink">{plan.name}</h3>
-              <p className="mt-2 text-sm text-muted">{plan.subtitle}</p>
-              <div className="mt-6 flex items-end gap-1.5"><span className="text-5xl font-extrabold tracking-[-0.05em] text-ink">${plan.price}</span><span className="pb-1.5 text-sm text-muted">/month</span></div>
+              <h3 className="text-2xl font-extrabold text-ink transition-colors duration-300 group-hover:text-white group-active:text-white">{plan.name}</h3>
+              <p className="mt-2 text-sm text-muted transition-colors duration-300 group-hover:text-white/80 group-active:text-white/80">{plan.subtitle}</p>
+              <div className="mt-6 flex items-end gap-1.5"><span className="text-5xl font-extrabold tracking-[-0.05em] text-ink transition-colors duration-300 group-hover:text-white group-active:text-white">${plan.price}</span><span className="pb-1.5 text-sm text-muted transition-colors duration-300 group-hover:text-white/85 group-active:text-white/85">/Month</span></div>
               <ul className="mt-8 space-y-4">
-                {plan.features.map((feature) => <li key={feature} className="flex gap-3 text-sm text-[#485466]"><span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#ece9ff] text-brand"><CheckIcon className="h-3 w-3" /></span>{feature}</li>)}
+                {plan.features.map((feature) => <li key={feature} className="flex gap-3 text-sm text-[#63758a] transition-colors duration-300 group-hover:text-white group-active:text-white"><span className="grid h-5 w-5 shrink-0 place-items-center text-emerald-500 transition-colors duration-300 group-hover:text-white group-active:text-white"><CheckIcon className="h-4 w-4" /></span>{feature}</li>)}
               </ul>
-              <button type="button" onClick={() => toast.success(`${plan.name} plan selected`)} className={`${plan.popular ? "brand-button" : "outline-button"} mt-auto w-full pt-0`}>{plan.button}</button>
+              <button type="button" onClick={() => toast.success(`${plan.name} plan selected`)} className="btn mt-auto min-h-0 h-12 w-full rounded-full border-0 bg-brand-gradient px-6 pt-0 text-sm font-bold normal-case text-white shadow-purple transition-all duration-300 hover:-translate-y-0.5 group-hover:bg-none group-hover:bg-white group-hover:text-brand group-active:bg-none group-active:bg-white group-active:text-brand">{plan.button}</button>
             </article>
           ))}
         </div>

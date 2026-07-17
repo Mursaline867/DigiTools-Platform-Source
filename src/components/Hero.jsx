@@ -22,8 +22,8 @@ export default function Hero() {
             <a href="#products" className="brand-button gap-2">
               Explore Products <ArrowIcon />
             </a>
-            <button type="button" className="outline-button gap-2" onClick={() => document.querySelector("#steps")?.scrollIntoView({ behavior: "smooth" })}>
-              <img src={playIcon} alt="" className="h-5 w-5" /> Watch Demo
+            <button type="button" className="group outline-button gap-2" onClick={() => document.querySelector("#steps")?.scrollIntoView({ behavior: "smooth" })}>
+              <img src={playIcon} alt="" className="h-5 w-5 shrink-0 object-contain transition duration-300 group-hover:brightness-0 group-hover:invert group-active:brightness-0 group-active:invert" /> Watch Demo
             </button>
           </div>
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs font-medium text-muted sm:text-sm">

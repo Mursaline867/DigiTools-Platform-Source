@@ -23,26 +23,26 @@ export default function ProductCard({ product, isInCart, onAdd }) {
   };
 
   return (
-    <article className="card-surface relative flex min-h-[420px] flex-col p-6">
+    <article className="group relative flex min-h-[420px] flex-col rounded-2xl border border-[#e8eaf2] bg-white p-6 shadow-card transition-all duration-300 ease-out hover:-translate-y-2 hover:border-transparent hover:bg-brand-gradient hover:text-white hover:shadow-purple active:-translate-y-2 active:border-transparent active:bg-brand-gradient active:text-white active:shadow-purple">
       <span className={`absolute right-5 top-5 rounded-full px-3 py-1.5 text-[11px] font-bold ${tagStyles[product.tagType]}`}>{product.tag}</span>
-      <div className="grid h-14 w-14 place-items-center rounded-2xl bg-[#f5f3ff]">
+      <div className="grid h-14 w-14 place-items-center rounded-2xl bg-[#f5f3ff] transition-colors duration-300 group-hover:bg-white group-active:bg-white">
         <img src={icons[product.icon]} alt="" className="h-9 w-9 object-contain" />
       </div>
-      <h3 className="mt-6 pr-20 text-xl font-extrabold tracking-[-0.02em] text-ink">{product.name}</h3>
-      <p className="mt-3 min-h-[52px] text-sm leading-6 text-muted">{product.description}</p>
+      <h3 className="mt-6 pr-20 text-xl font-extrabold tracking-[-0.02em] text-ink transition-colors duration-300 group-hover:text-white group-active:text-white">{product.name}</h3>
+      <p className="mt-3 min-h-[52px] text-sm leading-6 text-muted transition-colors duration-300 group-hover:text-white/80 group-active:text-white/80">{product.description}</p>
       <div className="mt-5 flex items-end gap-1.5">
-        <span className="text-3xl font-extrabold tracking-[-0.04em] text-ink">${product.price}</span>
-        <span className="pb-1 text-sm font-medium text-muted">/{product.period}</span>
+        <span className="text-3xl font-extrabold tracking-[-0.04em] text-ink transition-colors duration-300 group-hover:text-white group-active:text-white">${product.price}</span>
+        <span className="pb-1 text-sm font-medium text-muted transition-colors duration-300 group-hover:text-white/80 group-active:text-white/80">/{product.period}</span>
       </div>
       <ul className="mt-5 space-y-3">
         {product.features.map((feature) => (
-          <li key={feature} className="flex items-center gap-3 text-sm text-[#485466]">
-            <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#ece9ff] text-brand"><CheckIcon className="h-3 w-3" /></span>
+          <li key={feature} className="flex items-center gap-3 text-sm text-[#485466] transition-colors duration-300 group-hover:text-white group-active:text-white">
+            <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#ece9ff] text-brand transition-colors duration-300 group-hover:bg-white group-active:bg-white"><CheckIcon className="h-3 w-3" /></span>
             {feature}
           </li>
         ))}
       </ul>
-      <button type="button" onClick={handleAdd} disabled={isInCart} className={`btn mt-auto min-h-0 h-11 w-full rounded-xl normal-case transition duration-300 ${isInCart ? "border-brand/20 bg-brand/10 text-brand" : "border-0 bg-brand-gradient text-white shadow-purple hover:brightness-110"}`}>
+      <button type="button" onClick={handleAdd} disabled={isInCart} className={`btn mt-auto min-h-0 h-11 w-full rounded-xl normal-case transition duration-300 ${isInCart ? "border-brand/20 bg-brand/10 text-brand group-hover:border-white group-hover:bg-white group-active:border-white group-active:bg-white" : "border-0 bg-brand-gradient text-white shadow-purple group-hover:bg-none group-hover:bg-white group-hover:text-brand group-active:bg-none group-active:bg-white group-active:text-brand"}`}>
         {isInCart ? "Added to Cart" : justAdded ? "Added ✓" : "Buy Now"}
       </button>
     </article>
