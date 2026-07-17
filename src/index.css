@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #101727;
+  background: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; min-height: 100vh; font-family: Manrope, Inter, ui-sans-serif, system-ui, sans-serif; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible { outline: 3px solid rgba(79, 57, 246, .35); outline-offset: 3px; }
+
+@layer components {
+  .container-shell { @apply mx-auto w-full max-w-[1240px] px-5 sm:px-7 lg:px-10; }
+  .section-title { @apply text-center text-3xl font-extrabold tracking-[-0.03em] text-ink sm:text-4xl lg:text-[44px]; }
+  .section-copy { @apply mx-auto mt-4 max-w-2xl text-center text-sm leading-7 text-muted sm:text-base; }
+  .brand-button { @apply btn min-h-0 h-12 rounded-xl border-0 bg-brand-gradient px-6 text-sm font-bold normal-case text-white shadow-purple transition duration-300 hover:-translate-y-0.5 hover:brightness-110; }
+  .outline-button { @apply btn min-h-0 h-12 rounded-xl border border-brand bg-transparent px-6 text-sm font-bold normal-case text-brand transition duration-300 hover:-translate-y-0.5 hover:border-brand hover:bg-brand hover:text-white; }
+  .card-surface { @apply rounded-2xl border border-[#e8eaf2] bg-white shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-soft; }
+}
+
+.hero-grid {
+  background-image: radial-gradient(circle at 1px 1px, rgba(79,57,246,.11) 1px, transparent 0);
+  background-size: 22px 22px;
+}
+
+.hero-glow::before {
+  content: "";
+  position: absolute;
+  inset: 10% 4% 0 17%;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(79,57,246,.18), rgba(149,20,250,.08));
+  filter: blur(2px);
+  z-index: 0;
+}
+
+.gradient-text {
+  background: linear-gradient(105deg, #4f39f6 0%, #9514fa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.toast-progress { background: linear-gradient(105deg, #4f39f6, #9514fa) !important; }
